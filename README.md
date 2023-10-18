@@ -1,0 +1,3 @@
+# IEEE 32 BIT FLOATING POINT DIVISION
+
+## STAGE 1 - Synthesis and GLS
