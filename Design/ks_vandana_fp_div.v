@@ -1,4 +1,4 @@
-module fp_div(
+module ks_vandana_fp_div(
 	a1,
 	b1,
 	c,

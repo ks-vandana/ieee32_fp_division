@@ -1,4 +1,4 @@
-module fp_div_1(a1,b1,c,clk);
+module ks_vandana_fp_div_1(a1,b1,c,clk);
   input bit [31:0]a1;
   input bit [31:0]b1;
   input bit clk;
