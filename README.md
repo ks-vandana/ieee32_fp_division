@@ -18,7 +18,7 @@ The following code performs division on 2 floating point numbers with representa
 
 
 <details>
-<summary><b> STAGE 1 </b></summary>
+<summary><b> Stage 1 </b></summary>
 
 ### Yosys synthesis
 Use the following commands
