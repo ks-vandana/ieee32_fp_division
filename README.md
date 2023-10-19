@@ -28,10 +28,11 @@ abc -liberty /home/vandana/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/lib/s
 Use the following commands
 ```
 show
-write_verilog -noattr
+write_verilog -noattr /home/vandana/ieee32_fp_division/STAGE_1/ks_vandana_fp_div_netlist.v
 ```
   SInce there are 12009 cells, show command doesnt give an output in the terminal
   ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/16333ae4-c130-4d45-a336-e577f5073c99)
+  ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/34b538f7-93a3-4b3d-9280-c712a2c37e86)
 
 ### GTKwave
 Use the following commands
