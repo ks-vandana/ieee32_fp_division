@@ -1,6 +1,13 @@
 # IEEE 32 BIT FLOATING POINT DIVISION
 
 <details>
+<summary><b> Code description </b></summary>
+
+---
+
+</details>
+
+<details>
 <summary><b> Verilog code </b></summary>
 
 ```
