@@ -98,7 +98,9 @@ Thus the code is accurate upto 5 decimal places.
 
 Now we use the following commands
 ```
-iverilog /home/vandana/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/primitives.v /home/vandana/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/sky130_fd_sc_hd.v 
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v ../verilog_files/ks_vandana_fp_div_netlist.v ../verilog_files/ks_vandana_fp_div_tb.v
+./a.out
+gtkwave ks_vandana_fp_div.vcd
 ```
   ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/7ed4e4cc-9f8f-4640-be54-92dbe727cfe5)
   ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/065ae3be-1054-48b2-946d-43f46d481272)
