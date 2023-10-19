@@ -181,6 +181,36 @@ iverilog ks_vandana_fp_div.v ks_vandana_fp_div_tb.v
 gtkwave ks_vandana_fp_div.vcd
 ```
   ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/438e4f10-b7f6-4fa6-9819-48a43d9d3df3)
-  ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/b3f3907e-f3bb-48e1-bd67-6a914ecfafc4)
+  ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/933b51e8-9fcf-4733-be9f-4726e3abcd6d)
+
+```
+Values in testbench:
+1) a1=32'b01000010111101111011001100110011 = 123.85 in decimal
+
+   b1=32'b01000010001101100000000000000000 = 45.5 in decimal
+
+   Output expected : c1 = 32'b01000000001011100011010011100011 = 2.72197 in decimal
+
+   Output seen in gtkwave : c1 = 32'b1000000001011100011010011100011 = 2.72197 in decimal
+   
+3) a1=32'b01000010000101110101000011100101 = 37.829 in decimal
+
+   b1=32'b01000000000010001110010101100000 = 2.139 in decimal
+
+   Output expected : c1 = 32'b01000001100011010111101110100010 = 17.68536 in decimal
+
+   Output seen in gtkwave : c1 = 32'b01000001100011010111101110100001 = 17.68536 in decimal
+   
+5) a1=32'b01000010100001101101001101110101 = 67.413 in decimal
+
+   b1=32'b01000001000011110001001001101111 = 8.942 in decimal
+
+   Output expected : c1 = 32'b01000000111100010011111011010000 = 7.53891 in decimal
+
+   Output seen in gtkwave : c1 = 32'b01000000111100010011111011001110 = 7.53891 in decimal
+```
+Thus the code is accurate upto 5 decimal places.
+
+---
 
 </details>
