@@ -57,7 +57,7 @@ write_verilog -noattr /home/vandana/ieee32_fp_division/STAGE_1/ks_vandana_fp_div
 
 ---
 
-### GTKwave
+### Pre-synthesis simulation
 Use the following commands
 ```
 cd /home/vandana/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files
@@ -95,6 +95,8 @@ Values in testbench:
    Output seen in gtkwave : c1 = 32'b01000000111100010011111011001110 = 7.53891 in decimal
 ```
 Thus the code is accurate upto 5 decimal places.
+
+### Post-synthesis simulation
 
 Now we use the following commands
 ```
