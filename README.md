@@ -65,8 +65,9 @@ iverilog ks_vandana_fp_div.v ks_vandana_fp_div_tb.v
 ./a.out
 gtkwave ks_vandana_fp_div.vcd
 ```
-  ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/438e4f10-b7f6-4fa6-9819-48a43d9d3df3)
-  ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/933b51e8-9fcf-4733-be9f-4726e3abcd6d)
+  ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/2e93899b-80d1-478b-adc1-b9793357b5a1)
+  ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/51ddcd03-44fc-45fa-b9af-2065ad7ff1cf)
+  ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/88215b0e-16fd-4b9d-ab91-234281321d23)
 
 ```
 Values in testbench:
@@ -104,8 +105,9 @@ iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_
 ./a.out
 gtkwave ks_vandana_fp_div.vcd
 ```
-  ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/7ed4e4cc-9f8f-4640-be54-92dbe727cfe5)
-  ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/065ae3be-1054-48b2-946d-43f46d481272)
+  ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/8b78fc9c-a7f4-494e-a4b9-e715abcd6a28)
+  ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/cdb7ee91-bd13-4394-94b5-ff6582e474d2)
+  ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/fa8e640c-b204-4f32-883c-1cff2e1127e6)
 
 We can see that the gtkwave result is the same as obtained above. Thus even after connecting the primitives, the results remain the same as above.
 
