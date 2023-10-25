@@ -114,3 +114,25 @@ We can see that the gtkwave result is the same as obtained above. Thus even afte
 ---
 
 </details>
+
+<details>
+
+<summary><b> Stage 1 </b></summary>
+
+Run the following commands to generate floorplan
+```
+cd OpenLane/
+sudo make mount
+./flow.tcl -interactive
+package require openlane 0.9
+prep -design ks_vandana_fp_div
+run_synthesis
+run_floorplan
+```
+
+
+```
+cd /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.10.25_06.26.47/results/floorplan
+```
+  
+</details>
