@@ -117,7 +117,7 @@ We can see that the gtkwave result is the same as obtained above. Thus even afte
 
 <details>
 
-<summary><b> Stage 1 </b></summary>
+<summary><b> Stage 2 </b></summary>
 
 Run the following commands to generate floorplan
 ```
@@ -130,9 +130,23 @@ run_synthesis
 run_floorplan
 ```
 
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/724c239e-6f9f-4709-b312-20b968c853fd)
 
 ```
-cd /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.10.25_06.26.47/results/floorplan
+cd /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.10.25_06.43.25/results/floorplan
+magic -T /home/vandana/git_open_pdks/sky130/magic/sky130.tech lef read /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.10.25_06.43.25/tmp/merged.nom.lef def read ks_vandana_fp_div.def &
 ```
-  
+
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/e771746c-492e-4c2a-89ff-fe404d6f0b9e)
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/4cd6a357-ee9d-4143-a43f-720f4c6c76d4)
+
+```
+cd /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.10.25_06.43.25/results/placement
+magic -T /home/vandana/git_open_pdks/sky130/magic/sky130.tech lef read /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.10.25_06.43.25/tmp/merged.nom.lef def read ks_vandana_fp_div.def &
+```
+
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/b30e320d-926a-4385-9118-9ba2313abe6a)
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/d0ee7012-cb49-4ae7-a311-d000688ac310)
+
+
 </details>
