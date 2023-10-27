@@ -164,6 +164,24 @@ magic -T /home/vandana/git_open_pdks/sky130/magic/sky130.tech lef read /home/van
 ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/d0ee7012-cb49-4ae7-a311-d000688ac310)
 
 ### Timing analysis
+**my_base.scd** must be present inside the src folder of your design and pre_sta.conf must be present in the OpenLane folder. After ensuring that, run the following command.
+```
+sta pre_sta.conf
+```
+
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/007c4b30-6b8f-4b4b-86bb-1cc00f0cbe44)
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/4c5566cd-ebbd-44f5-8c5e-5026c1b27f14)
+
+As we can see, currently tns = -1998.54 and wns = -157.30. These values must be 0 or a postive number so we will need to improve those values.
+
+Fanout when we used **sta** was seen to range from values 1 to 6. We will first reduce that by adding the following commands in the **config.tcl** file. After making the changes do **run_synthesis** and
+```
+"SYNTH_STRATEGY": "DELAY 1",
+"MAX_FANOUT_CONSTRAINT": 4,
+```
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/1183d6ae-1112-4d61-a9c7-65a289b3fa7e)
+
+We can see that now tns = -655.33 and wns = -56.52. These values need to be reduced more.
 
 
 </details>
