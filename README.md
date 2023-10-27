@@ -119,6 +119,8 @@ We can see that the gtkwave result is the same as obtained above. Thus even afte
 
 <summary><b> Stage 2 </b></summary>
 
+### Floorplan
+
 Run the following commands to generate floorplan
 ```
 cd OpenLane/
@@ -140,6 +142,8 @@ magic -T /home/vandana/git_open_pdks/sky130/magic/sky130.tech lef read /home/van
 ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/e771746c-492e-4c2a-89ff-fe404d6f0b9e)
 ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/4cd6a357-ee9d-4143-a43f-720f4c6c76d4)
 
+### Placement
+
 ```
 cd /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.10.25_06.43.25/results/placement
 magic -T /home/vandana/git_open_pdks/sky130/magic/sky130.tech lef read /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.10.25_06.43.25/tmp/merged.nom.lef def read ks_vandana_fp_div.def &
@@ -147,6 +151,10 @@ magic -T /home/vandana/git_open_pdks/sky130/magic/sky130.tech lef read /home/van
 
 ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/b30e320d-926a-4385-9118-9ba2313abe6a)
 ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/d0ee7012-cb49-4ae7-a311-d000688ac310)
+
+### Timing analysis
+
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/7e3a4e40-fa7f-4d38-ba3b-0ca32c09f404)
 
 
 </details>
