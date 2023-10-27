@@ -165,28 +165,5 @@ magic -T /home/vandana/git_open_pdks/sky130/magic/sky130.tech lef read /home/van
 
 ### Timing analysis
 
-```
-cd OpenLane/
-sudo make mount
-./flow.tcl -interactive
-package require openlane 0.9
-prep -design ks_vandana_fp_div
-run_synthesis
-run_floorplan
-run_placement
-run_cts
-openroad
-read_lef $::env(MERGED_LEF)
-read_def designs/ks_vandana_fp_div/runs/RUN_2023.10.27_05.25.20/results/cts/ks_vandana_fp_div.def
-write_db ks_vandana_fp_div_cts.db
-read_db ks_vandana_fp_div_cts.db
-read_verilog designs/ks_vandana_fp_div/runs/RUN_2023.10.27_05.25.20/results/synthesis/ks_vandana_fp_div.v
-
-```
-
-![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/71368fc3-890b-4d4d-8d4f-85d104bddc96)
-![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/09968877-2091-48a2-b69e-ceaedce0ae07)
-
-
 
 </details>
