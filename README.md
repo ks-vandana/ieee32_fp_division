@@ -183,5 +183,10 @@ Fanout when we used **sta** was seen to range from values 1 to 6. We will first 
 
 We can see that now tns = -655.33 and wns = -56.52. These values need to be reduced more.
 
+After the **replace_cells** command, tns and wns are further improved.
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/632333cb-42d0-4c69-9088-e5e7a34f28c0)
+
+As we can see, currently tns = -43.53 and wns = -7.28.
+
 
 </details>
