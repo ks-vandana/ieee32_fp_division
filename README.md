@@ -164,29 +164,23 @@ magic -T /home/vandana/git_open_pdks/sky130/magic/sky130.tech lef read /home/van
 ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/d0ee7012-cb49-4ae7-a311-d000688ac310)
 
 ### Timing analysis
-**my_base.scd** must be present inside the src folder of your design and pre_sta.conf must be present in the OpenLane folder. After ensuring that, run the following command.
+**my_base.scd** must be present inside the src folder of your design and pre_sta.conf must be present in the OpenLane folder. After ensuring that, run the following command after **run_synthesis**.
 ```
 sta pre_sta.conf
 ```
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/490aacfa-9532-4c0b-b79e-5ef2549b1702)
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/3cc5f10e-569a-44e9-afbc-95d990a9f62a)
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/2441cec2-9adc-46e3-9b74-9b2a1cce096a)
 
-![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/007c4b30-6b8f-4b4b-86bb-1cc00f0cbe44)
-![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/4c5566cd-ebbd-44f5-8c5e-5026c1b27f14)
-
-As we can see, currently tns = -1998.54 and wns = -157.30. These values must be 0 or a postive number so we will need to improve those values.
-
-Fanout when we used **sta** was seen to range from values 1 to 6. We will first reduce that by adding the following commands in the **config.tcl** file. After making the changes do **run_synthesis** and
+Right now tns = -72.67 and wns = -10.79. As we can see we have fanout greater than 6 in the above screenshot. We reduce this by adding the following in the config.json file
 ```
-"SYNTH_STRATEGY": "DELAY 1",
 "MAX_FANOUT_CONSTRAINT": 4,
 ```
-![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/1183d6ae-1112-4d61-a9c7-65a289b3fa7e)
+Now repeat the above steps and check tns and wns
 
-We can see that now tns = -655.33 and wns = -56.52. These values need to be reduced more.
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/c7c1e8af-e366-46ba-b957-8ab83173fa9e)
 
-After the **replace_cells** command, tns and wns are further improved.
-![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/632333cb-42d0-4c69-9088-e5e7a34f28c0)
-
-As we can see, currently tns = -43.53 and wns = -7.28.
+Now, tns = -63.14 and wns = -9.57. We can optimize this further by increasing the clock period
 
 
 </details>
