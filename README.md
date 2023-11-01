@@ -119,9 +119,46 @@ We can see that the gtkwave result is the same as obtained above. Thus even afte
 
 <summary><b> Stage 2 </b></summary>
 
+### Timing analysis
+**my_base.scd** must be present inside the src folder of your design and **pre_sta.conf** must be present in the OpenLane folder. 
+Some changes made in the config.tcl file are
+```
+"CLOCK_PERIOD": 30.000,
+"MAX_FANOUT_CONSTRAINT": 4,
+"SYNTH_STRATEGY": "DELAY 0",
+"SYNTH_SIZING":1,
+```
+First we need to synthesize the design as the results from synthesis is used in the **pre_sta.conf** file
+```
+cd OpenLane
+sudo make mount
+./flow.tcl -interactive
+package require openlane 0.9
+prep -design ks_vandana_fp_div
+run_synthesis
+```
+After ensuring that, run the following command after **run_synthesis**.
+```
+sta pre_sta.conf
+```
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/4aed4051-195a-4529-9f76-eb20a825c9e0)
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/d0cdce40-1cd1-4f09-9f8f-d86dd9aa6ed4)
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/66806b21-9194-4a54-aabf-564cb550276b)
+
+We can see that tns = 0 and wns = 0. But slack = 4.43. Even though slack is met, we need to ensure that this value is as minimum as possible. We can ensure this by reducing the clock period.
+After reducing clock period, perform the above commands again. When clock period was set as 25
+
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/ef1f4924-506f-4f1e-a247-cbe07f5c8888)
+
+Hence changes still need to be made as now slack is violated. When clock period is set as 26
+
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/6f341fba-802f-4a19-b0c8-3bf4188e2e2d)
+
+Thus slack is now in an acceptable range.
+
 ### Floorplan
 
-Run the following commands to generate floorplan
+Now that timing analysis before synthesis is done, run the following commands to generate floorplan
 ```
 cd OpenLane/
 sudo make mount
@@ -131,16 +168,15 @@ prep -design ks_vandana_fp_div
 run_synthesis
 run_floorplan
 ```
-
-![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/724c239e-6f9f-4709-b312-20b968c853fd)
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/7f2d4060-a2bf-4d73-ad17-2fe5446d07b3)
 
 ```
-cd /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.10.25_06.43.25/results/floorplan
-magic -T /home/vandana/git_open_pdks/sky130/magic/sky130.tech lef read /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.10.25_06.43.25/tmp/merged.nom.lef def read ks_vandana_fp_div.def &
+cd /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.11.01_07.23.02/results/floorplan
+magic -T /home/vandana/git_open_pdks/sky130/magic/sky130.tech lef read /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.11.01_07.23.02/tmp/merged.nom.lef def read ks_vandana_fp_div.def &
 ```
 
-![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/e771746c-492e-4c2a-89ff-fe404d6f0b9e)
-![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/4cd6a357-ee9d-4143-a43f-720f4c6c76d4)
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/1f678b38-07fe-4a38-bb35-c097057f5b4b)
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/e9f0025d-1dc6-43ac-b4af-98b0eba5e187)
 
 ### Placement
 
@@ -154,33 +190,15 @@ run_synthesis
 run_floorplan
 run_placement
 ```
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/69bcc446-9f3a-438b-be18-dc90391b22e3)
 
 ```
-cd /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.10.25_06.43.25/results/placement
-magic -T /home/vandana/git_open_pdks/sky130/magic/sky130.tech lef read /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.10.25_06.43.25/tmp/merged.nom.lef def read ks_vandana_fp_div.def &
+cd /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.11.01_07.23.02/results/placement
+magic -T /home/vandana/git_open_pdks/sky130/magic/sky130.tech lef read /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.11.01_07.23.02/tmp/merged.nom.lef def read ks_vandana_fp_div.def &
 ```
 
 ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/b30e320d-926a-4385-9118-9ba2313abe6a)
 ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/d0ee7012-cb49-4ae7-a311-d000688ac310)
-
-### Timing analysis
-**my_base.scd** must be present inside the src folder of your design and pre_sta.conf must be present in the OpenLane folder. After ensuring that, run the following command after **run_synthesis**.
-```
-sta pre_sta.conf
-```
-![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/490aacfa-9532-4c0b-b79e-5ef2549b1702)
-![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/3cc5f10e-569a-44e9-afbc-95d990a9f62a)
-![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/2441cec2-9adc-46e3-9b74-9b2a1cce096a)
-
-Right now tns = -72.67 and wns = -10.79. As we can see we have fanout greater than 6 in the above screenshot. We reduce this by adding the following in the config.json file
-```
-"MAX_FANOUT_CONSTRAINT": 4,
-```
-Now repeat the above steps and check tns and wns
-
-![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/c7c1e8af-e366-46ba-b957-8ab83173fa9e)
-
-Now, tns = -63.14 and wns = -9.57. We can optimize this further by increasing the clock period
 
 
 </details>
