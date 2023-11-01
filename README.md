@@ -168,15 +168,14 @@ prep -design ks_vandana_fp_div
 run_synthesis
 run_floorplan
 ```
-![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/7f2d4060-a2bf-4d73-ad17-2fe5446d07b3)
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/857d54ba-f5d4-4042-a999-aa054f24134f)
 
 ```
-cd /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.11.01_07.23.02/results/floorplan
-magic -T /home/vandana/git_open_pdks/sky130/magic/sky130.tech lef read /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.11.01_07.23.02/tmp/merged.nom.lef def read ks_vandana_fp_div.def &
+cd /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.11.01_09.00.10/results/floorplan
+magic -T /home/vandana/git_open_pdks/sky130/magic/sky130.tech lef read /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.11.01_09.00.10/tmp/merged.nom.lef def read ks_vandana_fp_div.def &
 ```
-
-![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/1f678b38-07fe-4a38-bb35-c097057f5b4b)
-![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/e9f0025d-1dc6-43ac-b4af-98b0eba5e187)
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/835a2cdb-76cf-421c-b745-75f842a75d93)
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/9e3dc98a-9b92-4cfe-98e7-ac7e1ccf852b)
 
 ### Placement
 
@@ -190,15 +189,15 @@ run_synthesis
 run_floorplan
 run_placement
 ```
-![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/69bcc446-9f3a-438b-be18-dc90391b22e3)
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/9af37d05-b00e-4b64-89db-f07ba69e37fb)
 
 ```
-cd /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.11.01_07.23.02/results/placement
-magic -T /home/vandana/git_open_pdks/sky130/magic/sky130.tech lef read /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.11.01_07.23.02/tmp/merged.nom.lef def read ks_vandana_fp_div.def &
+cd /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.11.01_09.00.10/results/placement
+magic -T /home/vandana/git_open_pdks/sky130/magic/sky130.tech lef read /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.11.01_09.00.10/tmp/merged.nom.lef def read ks_vandana_fp_div.def &
 ```
-
-![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/b30e320d-926a-4385-9118-9ba2313abe6a)
-![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/d0ee7012-cb49-4ae7-a311-d000688ac310)
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/ebe2064c-fdda-4366-a624-27aadd0c9259)
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/c8a13097-1613-4014-a11d-ec103dc9248d)
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/1218ec3b-a0f1-4f97-b4d8-f7e9e3628da8)
 
 
 </details>
