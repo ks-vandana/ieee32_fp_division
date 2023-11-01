@@ -160,12 +160,6 @@ Thus slack is now in an acceptable range.
 
 Now that timing analysis before synthesis is done, run the following commands to generate floorplan
 ```
-cd OpenLane/
-sudo make mount
-./flow.tcl -interactive
-package require openlane 0.9
-prep -design ks_vandana_fp_div
-run_synthesis
 run_floorplan
 ```
 ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/857d54ba-f5d4-4042-a999-aa054f24134f)
@@ -180,13 +174,6 @@ magic -T /home/vandana/git_open_pdks/sky130/magic/sky130.tech lef read /home/van
 ### Placement
 
 ```
-cd OpenLane/
-sudo make mount
-./flow.tcl -interactive
-package require openlane 0.9
-prep -design ks_vandana_fp_div
-run_synthesis
-run_floorplan
 run_placement
 ```
 ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/9af37d05-b00e-4b64-89db-f07ba69e37fb)
@@ -198,6 +185,24 @@ magic -T /home/vandana/git_open_pdks/sky130/magic/sky130.tech lef read /home/van
 ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/ebe2064c-fdda-4366-a624-27aadd0c9259)
 ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/c8a13097-1613-4014-a11d-ec103dc9248d)
 ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/1218ec3b-a0f1-4f97-b4d8-f7e9e3628da8)
+
+### Clock tree synthesis
+
+```
+run_cts
+```
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/9d1fb383-62fc-455c-8988-ca954c5e79b7)
+
+### Power Distribution Network
+```
+gen_pdn
+```
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/f942a029-d449-40f0-9107-700ed15bd48b)
+
+### Routing
+```
+run_routing
+```
 
 
 </details>
