@@ -213,5 +213,9 @@ magic -T /home/vandana/sky130/magic/sky130.tech lef read /home/vandana/OpenLane/
 ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/4af3d884-3e01-4787-ae69-2ff51e3effad)
 ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/cc0c1e0f-dfe1-4b23-a2d6-3a173421e6c8)
 
+### Automatic flow of OpenLane
+```
+
+```
 
 </details>
