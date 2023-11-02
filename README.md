@@ -125,7 +125,7 @@ Some changes made in the config.tcl file are
 ```
 "CLOCK_PERIOD": 30.000,
 "MAX_FANOUT_CONSTRAINT": 4,
-"SYNTH_STRATEGY": "DELAY 0",
+"SYNTH_STRATEGY": "DELAY 1",
 "SYNTH_SIZING":1,
 ```
 First we need to synthesize the design as the results from synthesis is used in the **pre_sta.conf** file
@@ -141,18 +141,22 @@ After ensuring that, run the following command after **run_synthesis**.
 ```
 sta pre_sta.conf
 ```
-![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/fc788dcd-5d95-4941-92f8-13f5bc1083ba)
-![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/61a74e62-0522-4091-9c09-da3f3d8c1880)
-![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/66806b21-9194-4a54-aabf-564cb550276b)
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/af2c94c3-d2e5-4bca-b308-bf2050662c92)
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/73931f9a-0bee-48d5-a648-a5e803995aeb)
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/a07cde81-2fff-4c53-a5cf-ed135dc87569)
 
-We can see that tns = 0 and wns = 0. But slack = 4.43. Even though slack is met, we need to ensure that this value is as minimum as possible. We can ensure this by reducing the clock period.
-After reducing clock period, perform the above commands again. When clock period was set as 25
+We can see that tns = 0 and wns = 0. But slack = 6.06. Even though slack is met, we need to ensure that this value is as minimum as possible. We can ensure this by reducing the clock period.
+After reducing clock period, perform the above commands again. 
 
-![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/ef1f4924-506f-4f1e-a247-cbe07f5c8888)
+When clock period was set as 25.
 
-Hence changes still need to be made as now slack is violated. When clock period is set as 26
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/20acaecb-8501-4577-b59d-f1ddcf42b075)
 
-![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/6f341fba-802f-4a19-b0c8-3bf4188e2e2d)
+Even though slack is 1.06, we can minimize it further. 
+
+When clock period is set as 24.
+
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/de58cba1-9a97-4d86-a2d6-12c4bb4962e8)
 
 Thus slack is now in an acceptable range.
 
@@ -165,8 +169,8 @@ run_floorplan
 ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/20899b33-c7e9-4631-a90f-63fef222095f)
 
 ```
-cd /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.11.02_04.31.57/results/floorplan
-magic -T /home/vandana/sky130/magic/sky130.tech lef read /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.11.02_04.31.57/tmp/merged.nom.lef def read ks_vandana_fp_div.def &
+cd /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.11.02_17.23.55/results/floorplan/
+magic -T /home/vandana/sky130/magic/sky130.tech lef read /home/vandana/OpenLane/designs/ks_vandana_fp_div/runs/RUN_2023.11.02_17.23.55/tmp/merged.nom.lef def read ks_vandana_fp_div.def &
 ```
 ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/68144ec3-9a51-4810-9095-5b1124614395)
 ![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/1129e4ba-1bb2-4f11-9026-320666b62a1f)
