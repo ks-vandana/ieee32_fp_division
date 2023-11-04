@@ -221,6 +221,11 @@ cd OpenLane
 sudo make mount
 ./flow.tcl -design ks_vandana_fp_div
 ```
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/bcdcec3a-c0e8-4e3a-a5ba-01ab2840befe)
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/6548eb16-3ef2-4b38-aa25-d059cab4d694)
+![image](https://github.com/ks-vandana/ieee32_fp_division/assets/116361300/9a0ebacb-1e90-4ee3-a2e3-57112b73c43d)
+
+Warnings are due to the **MAX_FANOUT_CONSTRAINT** in the config file.
 
 
 </details>
